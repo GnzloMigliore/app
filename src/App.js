@@ -1,7 +1,14 @@
- import Header from "./Header"
+ import NavBar from "./components/NavBar"
+ import ItemListContainer from "./components/ItemListContainer"
  
- const App = () => 
+
+ const App = () => {
+
+ return(
  <>
- <Header/>
-</>
+ <NavBar />
+ <ItemListContainer  nombre="Gonzalo" edad={26}/>
+ 
+ </>
+    )}
  export default App;
