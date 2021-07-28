@@ -1,5 +1,5 @@
  import NavBar from "./components/NavBar"
- import ItemListContainer from "./components/ItemListContainer"
+ import ItemCounter from "./components/ItemCount"
  
 
  const App = () => {
@@ -7,7 +7,7 @@
  return(
  <>
  <NavBar />
- <ItemListContainer  nombre="Gonzalo" edad={26}/>
+ <ItemCounter  stock={20} initial={1}/>
  
  </>
     )}
