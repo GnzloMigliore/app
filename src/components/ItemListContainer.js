@@ -1,10 +1,26 @@
-const itemListContainer = (props) => {
+import ItemList from "./ItemList"
+import React, {useEffect, useState} from "react";
+import {prod} from "./products"
+const ItemListContainer = () =>{
 
-const nombre = props.nombre
-const edad = props.edad
-return(
-<p className="text-center mt-5">
-    Mi nombre es {nombre} y tengo {edad} años.
-</p>
-)}
-export default itemListContainer;
+
+    const [productos, setProductos] = useState([])
+
+    useEffect(() => {
+        const promesa = new Promise((resolve)=>{
+        setTimeout(()=>{
+                resolve(prod)
+        },2000)
+    })
+    promesa.then((prod)=>{
+        setProductos(prod)
+    })
+    },[])
+
+    return(
+<>
+    <ItemList productos={productos}/>
+</>
+    )
+}
+export default ItemListContainer

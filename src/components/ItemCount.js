@@ -16,15 +16,24 @@ const descontarContador=()=>{
     
         }
     }
+    const confirmar = () => {
+        if(stock > 0){
+            onAdd(counter)
+        }
+    }
 return(
 <div>
 <div>
-<h2 className="d-flex justify-content-center">Cantidad: {counter}</h2>
+<h4 className="d-flex justify-content-center">Cantidad: {counter}</h4>
 </div>
 <div className=" d-flex justify-content-center">
 
-<Button variant ="dark" className="m-2" onClick={descontarContador}>-</Button>
-<Button variant ="dark" className="m-2" onClick={aumentarContador}>+</Button>
+<Button variant ="light" className="m-2" onClick={descontarContador}>-</Button>
+<Button variant ="light" className="m-2" onClick={aumentarContador}>+</Button>
+
+</div>
+<div>
+   <Button variant ="dark" className="m-2" onClick={confirmar}>Confirmar</Button>
 </div>
 </div>
 )

@@ -1,5 +1,5 @@
  import NavBar from "./components/NavBar"
- import ItemCounter from "./components/ItemCount"
+import ItemListContainer from "./components/ItemListContainer";
  
 
  const App = () => {
@@ -7,7 +7,7 @@
  return(
  <>
  <NavBar />
- <ItemCounter  stock={20} initial={1}/>
+ <ItemListContainer/>
  
  </>
     )}
