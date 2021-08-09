@@ -1,5 +1,6 @@
  import NavBar from "./components/NavBar"
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
  
 
  const App = () => {
@@ -8,7 +9,7 @@ import ItemListContainer from "./components/ItemListContainer";
  <>
  <NavBar />
  <ItemListContainer/>
- 
+ <ItemDetailContainer/>
  </>
     )}
  export default App;

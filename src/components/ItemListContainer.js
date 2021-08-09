@@ -3,7 +3,6 @@ import React, {useEffect, useState} from "react";
 import {prod} from "./products"
 const ItemListContainer = () =>{
 
-
     const [productos, setProductos] = useState([])
 
     useEffect(() => {
