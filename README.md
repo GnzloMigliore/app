@@ -33,8 +33,8 @@ El ecommerce ofrecerá calzado urbano, los cuales han sido seleccionados minucio
     
         ![Captura](https://i2.wp.com/fakeinet.com/wp-content/uploads/2019/11/nnkeug.com-tienda-online-falsa-Nike.jpg?fit=754%2C972&ssl=1)
         ```
-        JUST DO IT
     ___
++ ## ___Ejemplo de navegabilidad___
 
-
+ ![Ejemplo en gif](https://drive.google.com/file/d/1EqX3KEQhWO4VQvk-pBdsHDYczLXHH4ij/view)
 ___   
