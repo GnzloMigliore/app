@@ -1,5 +1,6 @@
 import {useState} from "react";
 import  { Button }  from  'react-bootstrap' ;
+import { LinkContainer } from 'react-router-bootstrap'
 const ItemCount = ({stock,initial,onAdd}) => {
 
 const [counter,setCounter]=useState(initial);
@@ -24,16 +25,19 @@ const descontarContador=()=>{
 return(
 <div>
 <div>
-<h4 className="d-flex justify-content-center">Cantidad: {counter}</h4>
+<h4 className="d-flex justify-content-center mt-5">Cantidad: {counter}</h4>
 </div>
-<div className=" d-flex justify-content-center">
+<div className=" d-flex justify-content-center mt-2">
 
 <Button variant ="light" className="m-2" onClick={descontarContador}>-</Button>
 <Button variant ="light" className="m-2" onClick={aumentarContador}>+</Button>
 
 </div>
-<div>
-   <Button variant ="dark" className="m-2" onClick={confirmar}>Confirmar</Button>
+<div className=" d-flex justify-content-center mt-3">
+   <Button variant ="dark" className="m-2 d-flex justify-content-center" onClick={confirmar}>Confirmar</Button>
+   <LinkContainer to="/">
+      <Button variant ="dark" className="m-2 d-flex justify-content-center"style={{ width: '5rem' }}>Volver</Button>
+   </LinkContainer>
 </div>
 </div>
 )

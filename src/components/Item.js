@@ -1,11 +1,10 @@
 import Card from "react-bootstrap/Card"
 import  { Button }  from  'react-bootstrap' ;
-import ItemCount from "./ItemCount"
 import Col from "react-bootstrap/Col"
 import '../css/Item.css';
-
+import { LinkContainer } from 'react-router-bootstrap'
 const item = ({product}) => {
-const name = product.name;
+const name = product.title;
 const img = product.pictureUrl;
 const price = product.price;
 const model = product.model;
@@ -13,7 +12,7 @@ const description = product.description;
     return (
 
     <Col>
-        <Card className="card" style={{ width: '18rem' }}>
+        <Card className="card" style={{ width: '15rem' }}>
         <Card.Img className="imagen" variant="top" src={img} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
@@ -26,8 +25,7 @@ const description = product.description;
           <Card.Text>
             ${price}
           </Card.Text>
-          <ItemCount stock={20} initial={1}></ItemCount>
-          <Button className="m-2" variant="secondary">Ver más</Button>
+         <LinkContainer to={`/item/${product.id}`}><Button className="m-2" variant="secondary">Ver más</Button></LinkContainer> 
         </Card.Body>
       </Card></Col>
      
