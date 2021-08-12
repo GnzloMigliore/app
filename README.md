@@ -24,17 +24,14 @@ El ecommerce ofrecerá calzado urbano, los cuales han sido seleccionados minucio
 + ## ___Referentes___
     - [___Adidas___](https://www.adidas.com/us)
     
-        ![SALE!](https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enUS/Images/COMM-SS20-MayPromo-MemorialDay-mh-upto50off-d_tcm221-494128.jpg)
-        ```
-        The brand with the three stripes
+   
     ___
 
     - [___Nike___](https://www.nike.com/us/es/)
     
-        ![Captura](https://i2.wp.com/fakeinet.com/wp-content/uploads/2019/11/nnkeug.com-tienda-online-falsa-Nike.jpg?fit=754%2C972&ssl=1)
-        ```
+   
     ___
 + ## ___Ejemplo de navegabilidad___
 
- ![Ejemplo en gif](https://imgur.com/kIQXqIX)
+ ![Ejemplo en gif](https://imgur.com/kIQXqIX.gif)
 ___   
