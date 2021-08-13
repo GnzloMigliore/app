@@ -36,7 +36,7 @@ return(
 <div className=" d-flex justify-content-center mt-3">
    <Button variant ="dark" className="m-2 d-flex justify-content-center" onClick={confirmar}>Confirmar</Button>
    <LinkContainer to="/">
-      <Button variant ="dark" className="m-2 d-flex justify-content-center"style={{ width: '5rem' }}>Volver</Button>
+      <Button variant ="secondary" className="m-2 d-flex justify-content-center"style={{ width: '5rem' }}>Volver</Button>
    </LinkContainer>
 </div>
 </div>

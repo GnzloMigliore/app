@@ -5,11 +5,17 @@ import ItemCount from "./ItemCount"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import  { Button }  from  'react-bootstrap' ;
 const ItemDetail = ({item}) => {
     const img = item.pictureUrl;
-    const onAdd = (cantidad) =>{
-        console.log(cantidad)
+    const [cartItems, setCartItems] = useState(0)
+
+    const onAdd = (cantidad) => {
+        console.log(`se han agregado ${cantidad} producto/s al carrito`)
+        setCartItems(cartItems + cantidad)
+    
     }
     return (
         <>
@@ -30,7 +36,8 @@ const ItemDetail = ({item}) => {
                             {item.description}
                         </Card.Text>
                         <h5 className="text-center mt-5">$ {item.price}</h5>
-                        <ItemCount stock={10} initial={1} onAdd={onAdd}/>
+                        {cartItems >= 1 ? <Link to="/cart"><Button style={{width:"100%"}} variant ="dark" className="button">Terminar mi compra</Button></Link>  
+                        : <ItemCount initial={1} stock={5} onAdd={onAdd} />}
                         </Col>
                         </Row>
                          </Container>
