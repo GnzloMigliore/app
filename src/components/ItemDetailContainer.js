@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
     const [producto, setProducto] = useState([])
     const [estado, setEstado] = useState("pendiente");
     const params = useParams()
-    console.log(params)
+    //console.log(params)
 
     useEffect(() => {
         const getItem = new Promise((res, rej) => {
@@ -42,7 +42,7 @@ const ItemDetailContainer = () => {
         return (
             <div>
            <h3 className="title">DETALLE DEL PRODUCTO:</h3>
-                <ItemDetail item={producto} />
+                <ItemDetail producto={producto} />
             </div>
         )
     }

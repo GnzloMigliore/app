@@ -1,0 +1,56 @@
+.title{
+    text-align: center;
+    margin-top: 5rem;
+    border-bottom: grey;
+}
+.sinStock{
+    text-align: center;
+    margin-top: 5rem;
+    border-bottom: grey;
+}
+.img{
+    width: 80%;
+}
+.titulo{
+    font-size: 1.8rem;
+}
+.descripcion{
+    font-size: 1.5rem;
+}
+.precio{
+    font-size: 1.5rem;
+}
+.cantidad{
+    font-size: 1.5rem;
+}
+.subtotal{
+    font-size: 1.5rem;
+}
+.vaciar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.trash{
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-left: 38px;
+}
+.trash1{
+    font-size: 2rem;
+    
+}
+.check-out{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.terminar{
+    color: white;
+    text-decoration: none;
+}
+.boton-terminar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

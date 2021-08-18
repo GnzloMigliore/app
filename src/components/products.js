@@ -5,7 +5,8 @@ export const prod = [
         description: "Zapatillas para adultos Nike Air Force Negras.",
         price: 15500,
         pictureUrl: "/images/Airforce_black.jpg",
-        categoria:"1"
+        categoria:"1",
+        stock:"10"
     },
     {
         id: "2",
@@ -13,7 +14,8 @@ export const prod = [
         description: "Zapatillas para adultos Nike Jordan Negras y Blancas.",
         price: 12900,
         pictureUrl: "/images/jordan.jpg",
-        categoria:"1"
+        categoria:"1",
+        stock:"5"
     },
     {
         id: "3",
@@ -21,7 +23,8 @@ export const prod = [
         description: "Zapatillas para adultos Nike Air Force Blancas",
         price: 25000,
         pictureUrl: "/images/AirForce_white.jpg",
-        categoria:"1"
+        categoria:"1",
+        stock:"25"
     },
     {
         id: "4",
@@ -29,6 +32,7 @@ export const prod = [
         description: "Zapatillas para adultos Nike Air Jordan Rosas",
         price: 25000,
         pictureUrl: "/images/jordan_pink.jpg",
-        categoria:"2"
+        categoria:"2",
+        stock:"15"
     },
 ]

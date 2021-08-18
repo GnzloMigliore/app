@@ -11,7 +11,7 @@ const Menu = () => {
 
   return(
 
-    <Navbar bg="dark" variant="dark">
+    <Navbar className="navbar" bg="dark" variant="dark">
       <Container>
       <LinkContainer to="/">
       <Navbar.Brand href="#home" className="col-3"><img className="logo" src="/images/logo.png" alt="Menu" /></Navbar.Brand>
@@ -23,10 +23,10 @@ const Menu = () => {
       <LinkContainer to="/category/2"><Dropdown.Item eventKey="2">Femenino</Dropdown.Item></LinkContainer>
      </DropdownButton>
      </ButtonGroup>
-     <Nav.Link href="#home">Contacto</Nav.Link>
-        <Nav.Link href="#features">Productos</Nav.Link>
-        <Nav.Link href="#pricing">Nosotros</Nav.Link>
-        <Nav.Link href="#pricing"><CartWidget></CartWidget></Nav.Link>
+     <Nav.Link className="mt-4 nav" href="#home">Contacto</Nav.Link>
+        <Nav.Link className="mt-4 nav" href="#features">Productos</Nav.Link>
+        <Nav.Link className="mt-4 nav" href="#pricing">Nosotros</Nav.Link>
+        <Nav.Link className="mt-4 nav" href="/cart"><CartWidget></CartWidget></Nav.Link>
      
       </Nav>
       </Container>
