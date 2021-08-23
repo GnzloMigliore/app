@@ -13,7 +13,7 @@ const description = product.description;
 
     <Col>
         <Card className="card" style={{ width: '15rem' }}>
-        <Card.Img className="imagen" variant="top" src={img} />
+        <LinkContainer to={`/item/${product.id}`}><Card.Img className="imagen" variant="top" src={img} /></LinkContainer> 
         <Card.Body>
           <Card.Title>{name}</Card.Title>
           <Card.Text>

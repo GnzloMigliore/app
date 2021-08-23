@@ -1,10 +1,17 @@
   
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Provider } from "../context/CartContext";
 
 const CartProvider = ({ defaultState = [],children}) => {
-
+    const [precioTotal, setPrecioTotal] = useState(0);
     const [carrito, setCarrito] = useState(defaultState);
+    const [cartelAviso, setCartelAviso] = useState("");
+
+    useEffect( () => {
+        const total = Object.values(carrito).reduce( (acumulador, {cantidad, price}) => acumulador + cantidad * price, 0);
+        setPrecioTotal(total);
+    }, [carrito, precioTotal]);
+
 
     function agregarAlCarrito (prod, cant) {
         const yaExiste = carrito.find( (item) => item.id === prod.id);
@@ -20,9 +27,11 @@ const CartProvider = ({ defaultState = [],children}) => {
         }
     }
 
-    function borrarDelCarrito (id) {
+    function borrarDelCarrito (nombre, id) {
         const borrar = carrito.filter( (item) => item.id !== id);
         setCarrito(borrar);
+        setCartelAviso( `${nombre} se borró del carrito`);
+        setTimeout( () => {setCartelAviso("")}, 2000);
     }
 
     function vaciarCarrito () {
@@ -30,7 +39,7 @@ const CartProvider = ({ defaultState = [],children}) => {
     }
 
     return (
-    <Provider value={{carrito, setCarrito, agregarAlCarrito, borrarDelCarrito, vaciarCarrito}}>
+    <Provider value={{carrito, setCarrito, agregarAlCarrito, borrarDelCarrito, vaciarCarrito,precioTotal,cartelAviso}}>
         {children}
     </Provider>
     );

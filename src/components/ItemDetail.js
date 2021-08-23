@@ -28,7 +28,22 @@ const ItemDetail = ({producto}) => {
 
 
     const onAdd = () => {         
-        setTerminarCompra(<Link to={`/cart`} className="terminar"><div className="boton-terminar"><Button  variant="dark">TERMINAR COMPRA</Button></div></Link>);
+        setTerminarCompra(
+        <div>
+              <Container>
+                <Row>
+                <Col>
+                <Link to={`/`} className="terminar">
+            <div className="boton-terminar"><Button  variant="secondary">SEGUIR COMPRANDO</Button></div></Link>
+            </Col>
+            <Col>
+         
+            <Link to={`/cart`} className="terminar"><div className="boton-terminar"><Button  variant="dark">TERMINAR COMPRA</Button></div></Link>
+            </Col>
+            </Row>
+           </Container>
+        </div>
+            );
     }
     return (
         <>

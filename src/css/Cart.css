@@ -8,48 +8,80 @@
     margin-top: 5rem;
     border-bottom: grey;
 }
+.carro{
+    border: solid darkgrey 1px;
+    margin-top: 2rem;
+}
 .img{
+    margin-top: 0.5rem;
     width: 80%;
 }
 .titulo{
-    font-size: 1.8rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+}
+.resumen{
+  text-align: center;
+    font-size: 1.2rem;
 }
 .descripcion{
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 }
 .precio{
-    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
 }
 .cantidad{
-    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    font-size: 1rem;
 }
 .subtotal{
-    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-size: 1rem;
 }
 .vaciar{
+    background-color: #f2f0f0;
+    font-size: 1.5rem;
+
+  
+}
+.vaciar_carrito{
+  
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.total{
+    border-bottom: solid white 1px;
+    margin:1rem;
+    text-align: center;
+}
+.total p{
+  padding-top: 1.5rem;
 }
 .trash{
-    font-size: 2rem;
-    margin-top: 3rem;
-    margin-left: 38px;
+    font-size: 1rem;
+    margin-right: 0.1rem;
+    margin-top: 0.9rem;  
+    text-align: center;
+   
 }
 .trash1{
-    font-size: 2rem;
+    font-size: 1.2rem;
+    margin-top: 2.5rem;  
     
 }
-.check-out{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+
 .terminar{
     color: white;
     text-decoration: none;
 }
 .boton-terminar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.checkout{
     display: flex;
     flex-direction: row;
     justify-content: center;

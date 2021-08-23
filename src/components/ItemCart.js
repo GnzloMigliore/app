@@ -12,35 +12,34 @@ const ItemCart = ( {item, borrarDelCarrito} ) => {
         <>
            <Container>
            <Row>
+        
            <Col>  
                     <Link to={`/producto/${item.prod_id}`}>
                         <img className="img" src={img} alt={item.altimg} title={item.titulo} />
                     </Link>
            </Col>
-           <Col>  
-                <div>
-                    <h4  className="titulo mt-5">{item.title}</h4>
-                    <p  className="descripcion" title={item.descripcion}>{item.description}...</p>
-                </div>
-    
-           
-                <div >
-                    <p className="precio" title="Precio por unidad">${item.price}</p>
-                </div>
-                <div >
-                    <p className="cantidad">cantidad: {item.cantidad}</p>
-                </div>
-                <div >
-                    <p className="subtotal">Subtotal: $<span>{subtotal}</span></p>
-                </div>
-                <div className="item__delete">
+            <Col>
+            <div>
+                    <h4  className="titulo">{item.title}</h4>
+                  
+            </div>
+            </Col>
+            <Col>
+            <div >
+                    <p className="cantidad">Cantidad: {item.cantidad}</p>
+            </div>
+             </Col>
+              <Col>
+              <div >
+                    <p className="subtotal">Subtotal: ${subtotal}</p>
+              </div>
+              </Col>
+              <Col>
+              <div className="item__delete">
                 <BsTrashFill className="trash1" onClick={ ()=> borrarDelCarrito(item.name, item.id)}  alt="eliminar" title="eliminar el producto del carrito" />
-                </div>
-         
-        <div className="aclara_cant">
-            <p>* Stock disponible de {item.titulo}: {item.stock} unidad/es. Para cambiar la cantidad hacer click en la imagen</p>
-        </div>
-        </Col>
+              </div>
+              </Col>
+     
         </Row>
         </Container>
     </>
