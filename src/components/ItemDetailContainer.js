@@ -1,48 +1,74 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router";
-import {prod} from "./products"
-import Spinner from 'react-bootstrap/Spinner'
+import Footer from "./Footer"
+import { baseDatosFB } from "./firebase/index"
+import '../css/ItemDetail.css';
 const ItemDetailContainer = () => {
-
+    /* estado de los productos a mostrar que inicia vacío */
     const [producto, setProducto] = useState([])
+    /* estado para mostrar el loading */
     const [estado, setEstado] = useState("pendiente");
+    /* parametro que recibe al renderizar el contenido */
     const params = useParams()
-    //console.log(params)
+    console.log(params)
+    //console.log(params.id)
 
     useEffect(() => {
-        const getItem = new Promise((res, rej) => {
-            setTimeout(() => {
-                if (params.id) {
-                    res(prod.find(producto => producto.id === params.id))
-                } else {
+        //Referencia a la DB
+        const db = baseDatosFB
+        //Referencia a una coleccion
+        const collection = db.collection("productos")
 
-                    res(console.log("Producto no encontrado"))
-                }
-            }, 2000)
-            setEstado("pendiente")
-        })
-        getItem.then((data_product) =>
-            setProducto(data_product))
-            .then(() => setEstado("terminado"))
+        if (params.id) {
+            const filtro = collection.doc(params.id)
+            console.log(filtro)
+            const query = filtro.get()
+            console.log(query)
+            query.then((resultados) => {
+                //console.log(resultados)
+
+                //el id esta separado del resto de la data
+                const id = resultados.id
+                const data = resultados.data()
+                console.log(data)
+                const data_final = { id, ...data }
+                setProducto(data_final)
+            }).catch((error) => {
+                console.log(error);
+                console.log("Error al cargar los productos, intentá nuevamente");
+            }).finally(() => {
+                setEstado("terminado");
+            });
+
+        } else {
+            console.log("Producto no encontrado")
+            setEstado("terminado")
+        }
+
+
     }, [params.id])
-    console.log(producto)
-    if (estado === "pendiente") {
-        return(
+   // console.log(producto)
 
-        <div>
-         <h3 className="title">Detalle de Producto:</h3>
-            <Spinner animation="border" role="status" className="d-block m-auto spinner" >
-                <span className=" visually-hidden">Loading...</span>
-            </Spinner>
-        </div>
+
+    if (estado === "pendiente") {
+        return (
+
+            <div className="loader">
+               
+                
+            <img   src={"/images/loader.gif"}  alt="loader"/>
+             </div>
         )
     } else {
 
         return (
             <div>
-           <h3 className="title">DETALLE DEL PRODUCTO:</h3>
+               <article class="col-8 mx-auto">
+                <h2 class="titulo-crear pb-3 border-bottom text-center pt-5 mx-auto text-uppercase">DETALLE DEL PRODUCTO</h2>
+                </article>
                 <ItemDetail producto={producto} />
+                <Footer />
             </div>
         )
     }

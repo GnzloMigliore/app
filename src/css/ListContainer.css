@@ -1,0 +1,9 @@
+.loader{
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.boton{
+    margin-right: 4rem;
+}

@@ -1,5 +1,8 @@
 .logo{
-    width: 40%
+    width: 45%
+}
+.navbar{
+    padding: 0;
 }
 .logo:hover{
     transform: scale(1.2);

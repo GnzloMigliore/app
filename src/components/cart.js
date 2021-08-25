@@ -6,6 +6,7 @@ import { BsTrashFill } from "react-icons/bs";
 import  { Button }  from  'react-bootstrap' ;
 import Container from "react-bootstrap/Container"
 import { LinkContainer } from 'react-router-bootstrap'
+import Footer from "./Footer"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import '../css/Cart.css';
@@ -20,7 +21,9 @@ const Carrito = (item) => {
     return (
         <>
        
-            <h3 className="title mb-5">CARRITO DE COMPRAS</h3>
+           <article class="col-8 mx-auto">
+                <h2 class="titulo-crear pb-3 border-bottom text-center pt-5 mx-auto text-uppercase">CARRITO</h2>
+            </article>
            
             <Container>
            <Row>
@@ -69,12 +72,16 @@ const Carrito = (item) => {
                  : null
                 }
            </section>
+          
            </Col>   
             </Row>
           </Container>
+       
           </Col>
           </Row>
+         
           </Container>
+          <Footer />
         </>
     );
 }

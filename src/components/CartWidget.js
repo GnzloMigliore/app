@@ -15,7 +15,7 @@ const Carrito = () => {
         setNumIcono(carrito.length);
         }, [carrito.length]
     );
-console.log(carrito.length);
+//console.log(carrito.length);
     return (
         <>
          <Container>

@@ -4,26 +4,19 @@ import Col from "react-bootstrap/Col"
 import '../css/Item.css';
 import { LinkContainer } from 'react-router-bootstrap'
 const item = ({product}) => {
-const name = product.title;
-const img = product.pictureUrl;
-const price = product.price;
-const model = product.model;
-const description = product.description;
+
     return (
 
     <Col>
         <Card className="card" style={{ width: '15rem' }}>
-        <LinkContainer to={`/item/${product.id}`}><Card.Img className="imagen" variant="top" src={img} /></LinkContainer> 
+        <LinkContainer to={`/item/${product.id}`}><Card.Img className="imagen" variant="top" src={product.pictureUrl} /></LinkContainer> 
         <Card.Body>
-          <Card.Title>{name}</Card.Title>
+          <Card.Title>{product.title}</Card.Title>
           <Card.Text>
-            {model}
+            {product.description}
           </Card.Text>
           <Card.Text>
-            {description}
-          </Card.Text>
-          <Card.Text>
-            ${price}
+            ${product.price}
           </Card.Text>
          <LinkContainer to={`/item/${product.id}`}><Button className="m-2" variant="secondary">Ver más</Button></LinkContainer> 
         </Card.Body>

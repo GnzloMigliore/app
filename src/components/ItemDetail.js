@@ -15,6 +15,7 @@ const ItemDetail = ({producto}) => {
 
 //console.log(producto);
     const img = producto.pictureUrl;
+
     const {carrito, agregarAlCarrito} = useContext(CartContext);
     const [ terminarCompra, setTerminarCompra ] = useState ();
 

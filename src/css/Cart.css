@@ -1,7 +1,8 @@
-.title{
-    text-align: center;
+.titlulocart{
+  
     margin-top: 5rem;
     border-bottom: grey;
+    text-align: center;
 }
 .sinStock{
     text-align: center;
@@ -16,7 +17,7 @@
     margin-top: 0.5rem;
     width: 80%;
 }
-.titulo{
+.title{
     margin-top: 2rem;
     font-size: 1rem;
 }

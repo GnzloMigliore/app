@@ -20,7 +20,7 @@ const ItemCart = ( {item, borrarDelCarrito} ) => {
            </Col>
             <Col>
             <div>
-                    <h4  className="titulo">{item.title}</h4>
+                    <h4  className="title">{item.title}</h4>
                   
             </div>
             </Col>
@@ -42,6 +42,7 @@ const ItemCart = ( {item, borrarDelCarrito} ) => {
      
         </Row>
         </Container>
+       
     </>
     );
 }

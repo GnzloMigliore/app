@@ -3,23 +3,24 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CartProvider from "./components/CartProvider";
+
 import Cart from "./components/Cart";
  const App = () => {
 
  return(
-
+  <CartProvider>
    <BrowserRouter>
-     <CartProvider>
+    
      <NavBar />
        <Switch>
-         <Route path="/category/:id" >
+         <Route path="/category/:prod_id" >
            <ItemListContainer/>
          </Route>
-         <Route path="/category/:id" exact>
+         <Route path="/category/:prod_id" exact>
            <ItemListContainer />
          </Route>
-         <Route path="/category/:id">
-           <ItemListContainer/>
+         <Route path="/category/:prod_id" >
+           <ItemListContainer />
          </Route>
          <Route path="/"exact>
            <ItemListContainer/>
@@ -30,9 +31,11 @@ import Cart from "./components/Cart";
         <Route path="/Cart">
           <Cart/>
         </Route>
+       
        </Switch>
-       </CartProvider>
-</BrowserRouter>
-
+  
+         
+   </BrowserRouter>
+</CartProvider>
     )}
  export default App;
