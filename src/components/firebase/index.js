@@ -16,3 +16,6 @@ import 'firebase/firestore';
   const app = firebase.initializeApp(firebaseConfig);
 
 export const baseDatosFB = firebase.firestore(app);
+export function getTimestamp() {
+  return firebase.firestore.Timestamp.fromDate(new Date())
+}

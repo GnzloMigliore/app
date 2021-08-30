@@ -87,3 +87,16 @@
     flex-direction: row;
     justify-content: center;
 }
+.formname{
+    margin-top: 1rem;
+margin-left: 2rem;
+width: 70%;
+}
+.formemail{
+    margin-top: 1rem;
+    margin-left: 3.3rem;
+width: 70%;
+}
+.finalizar{
+    margin-left: 5rem;
+}

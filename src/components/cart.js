@@ -5,14 +5,17 @@ import ItemCart from "./ItemCart";
 import { BsTrashFill } from "react-icons/bs";
 import  { Button }  from  'react-bootstrap' ;
 import Container from "react-bootstrap/Container"
+import FormContainer from "./FormContainer";
 import { LinkContainer } from 'react-router-bootstrap'
 import Footer from "./Footer"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import '../css/Cart.css';
 
-const Carrito = (item) => {
+const Carrito = () => {
+     const context = CartContext;
 
+  
     const {carrito, borrarDelCarrito, vaciarCarrito, precioTotal} = useContext(CartContext);
 
   
@@ -29,6 +32,9 @@ const Carrito = (item) => {
            <Row>
            <Col>
             { carrito.length > 0 ? carrito.map( (item) => <div className="carro"> <ItemCart key={item.id} item={item} borrarDelCarrito={borrarDelCarrito} /></div>) : <article><div className="sinStock">No hay productos en tu carrito. Te invitamos a que visites nuestra <Link to={`/`}><span className="sin_items">HOME</span></Link></div></article>}
+            { carrito.length > 0 ?
+            <FormContainer cart={context.items} /> : null
+             }
             </Col>
             <Col>
            <Container>
@@ -60,14 +66,14 @@ const Carrito = (item) => {
                 </div> : null } 
                 { carrito.length > 0 ?
                 <div>
-                <div className="checkout mt-2">
-                <Button variant="dark" id="botonCheckout"  href="">FINALIZAR COMPRA</Button>
-                </div>
                 <div className="checkout">
                 <LinkContainer to="/">
                 <Button variant="secondary mt-3 mb-4" id="botonCheckout"  href="">SEGUIR COMPRANDO</Button>
                 </LinkContainer>
                 </div>
+             
+             
+           
                 </div>
                  : null
                 }
@@ -79,9 +85,13 @@ const Carrito = (item) => {
        
           </Col>
           </Row>
-         
+        
           </Container>
-          <Footer />
+          { carrito.length > 0 ?
+         <Footer /> : null
+             }
+          
+         
         </>
     );
 }

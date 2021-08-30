@@ -3,8 +3,8 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CartProvider from "./components/CartProvider";
-
 import Cart from "./components/Cart";
+import Form from "./components/Formulario";
  const App = () => {
 
  return(
@@ -30,6 +30,9 @@ import Cart from "./components/Cart";
         </Route>
         <Route path="/Cart">
           <Cart/>
+        </Route>
+        <Route path="/OrderContainer">
+          <Form/>
         </Route>
        
        </Switch>
