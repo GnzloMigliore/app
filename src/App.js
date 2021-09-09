@@ -4,6 +4,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CartProvider from "./components/CartProvider";
 import Cart from "./components/Cart";
+import Gif from "./components/Gif";
 import FormContainer from "./components/FormContainter";
  const App = () => {
 
@@ -34,7 +35,9 @@ import FormContainer from "./components/FormContainter";
         <Route path="/FormContainer">
           <FormContainer/>
         </Route>
-       
+        <Route path="/ejemplo">
+          <Gif/>
+        </Route>
        </Switch>
   
          
