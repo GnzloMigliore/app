@@ -14,7 +14,7 @@ const Menu = () => {
       <Navbar.Brand href="#home" className="col-3"><img className="logo" src="/images/logo.png" alt="Menu" /></Navbar.Brand>
       </LinkContainer>
       <Nav className="me-auto p-2 col-9 d-flex justify-content-end p-0">
-     <Nav.Link className="mt-4 nav" href="/ejemplo">Navegatibilidad</Nav.Link>
+     <Nav.Link className="mt-4 nav" href="/ejemplo">Navegabilidad</Nav.Link>
         <Nav.Link className="mt-4 nav" href="#features">Productos</Nav.Link>
         <Nav.Link className="mt-4 nav" href="#pricing">Nosotros</Nav.Link>
         <Nav.Link className="mt-4 nav" href="/cart"><CartWidget></CartWidget></Nav.Link>
