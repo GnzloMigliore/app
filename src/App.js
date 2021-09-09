@@ -3,7 +3,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import CartProvider from "./components/CartProvider";
-import Cart from "./components/Cart";
+import Cart from "./components/cart";
 import Gif from "./components/Gif";
 import FormContainer from "./components/FormContainter";
  const App = () => {
