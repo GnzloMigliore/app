@@ -33,5 +33,5 @@ El ecommerce ofrecerá calzado urbano, los cuales han sido seleccionados minucio
     ___
 + ## ___Ejemplo de navegabilidad___
 
- ![Ejemplo en gif](https://i.imgur.com/8uY30oK.gif)
+ ![Ejemplo en gif](https://i.imgur.com/4vonCZl.gif)
 ___   
