@@ -1,27 +1,40 @@
-import  { Button }  from  'react-bootstrap' ;
+
 import { useState } from "react";
-const Form = ({ OnSubmit, LastOrder, isLoading }) => {
+//import { baseDatosFB } from "./firebase/index"
+import '../css/Form.css';
+
+
+
+const Formulario = ({ onSubmit, LastOrder, isLoading }) => {
 
     const [name, setName] = useState('')
-    const [phone, setPhone] = useState('')
-    const [email, setEmail] = useState('')
+    const [apellido, setApellido] = useState('')
+    const [phone, setDireccion] = useState('')
+    const [email, setPhone] = useState('')
+    const [direccion, setEmail] = useState('')
 
-console.log(name);
-
+    //const ordenDeCompra = baseDatosFB.collection("ordenesDeCompra");
+  
 
     const inputHandler = (e) => {
-
+         console.log(e.target.value);
         switch (e.target.name) {
 
             case 'name':
                 setName(e.target.value)
                 break;
+                case 'apellido':
+                    setApellido(e.target.value)
+                    break;
             case 'phone':
                 setPhone(e.target.value)
                 break;
             case 'email':
                 setEmail(e.target.value)
                 break;
+                case 'direccion':
+                    setDireccion(e.target.value)
+                    break;
             default:
                 break;
         }
@@ -29,48 +42,56 @@ console.log(name);
 
 
     return (
+        <div className="formulario">
 
-        <div>
+            <h2> Finaliza tu compra </h2>
+            <form onSubmit={(e) => onSubmit(e, { name: name, apellido:apellido , phone: phone, email: email, direccion: direccion })}>
 
-                  <h2 className="text-center mt-4"> Finaliza tu compra </h2>
-                  <form onSubmit={(e) => OnSubmit(e, { name: name, phone: phone, email: email })}>
-
-                    <div className="mb-6">
+                <div className="mb-6">
                     <div className="mb-2">
                         <label className="block text-gray-300">Nombre</label>
-                        <input type="text" name="name"  className="formname" onChange={inputHandler}
-                        />
+                        <input type="text" name="name" onChange={inputHandler}
+                            className="form-control" />
                     </div>
-
                     <div className="mb-2">
-                        <label className="block text-gray-300">Teléfono</label>
-                        <input type="text" name="phone" className="formname" onChange={inputHandler}
-                        />
+                        <label className="block text-gray-300">Apellido</label>
+                        <input type="text" name="apellido" onChange={inputHandler}
+                            className="form-control" />
+                    </div>
+                    <div className="mb-2">
+                        <label className="block text-gray-300">Telefono</label>
+                        <input type="text" name="phone" onChange={inputHandler}
+                            className="form-control" />
                     </div>
 
                     <div className="mb-2">
                         <label className="block text-gray-300">Email</label>
-                        <input type="email" name="email"  className="formemail" onChange={inputHandler}
-                        />
+                        <input type="email" name="email" onChange={inputHandler}
+                            className="form-control" />
+                    </div>
+                    <div className="mb-2">
+                        <label className="block text-gray-300">Dirección</label>
+                        <input type="text" name="direccion" onChange={inputHandler}
+                            className="form-control" />
                     </div>
 
                     {LastOrder &&
                         <p className="mt-2 text-center">
                             Confirmamos tu compra con el siguiente Nro de orden:
-                            <code >
+                            <code className="block bg-white bg-opacity-20 px-2">
                                 {LastOrder}
                             </code>
                         </p>}
                 </div>
 
                 {!isLoading &&
-                 
-                    <Button type="submit" variant="dark" className="mt-5 mb-2 finalizar" id="botonCheckout"  href="">FINALIZAR COMPRA</Button>
+                    <button className="btn btn-dark"
+                        type="submit">Finalizar compra</button>
                 }
 
                 {isLoading &&
                     <button className="bg-yellow-400 active:bg-green-500 rounded px-3 py-1"
-                        type="button" >
+                        type="button" disabled>
                         <span className="loader"></span>
                     </button>
                 }
@@ -79,8 +100,8 @@ console.log(name);
 
 
         </div>
-
+          
     )
 }
 
-export default Form
+export default Formulario

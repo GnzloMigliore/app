@@ -34,9 +34,9 @@ const ItemListContainer = ({ greeting }) => {
         if (params.prod_id) {
             const filtro = collection.where("categoria", "==", params.prod_id)
             const query = filtro.get()
-            console.log(query)
+            //console.log(query)
             query.then((resultados) => {
-                console.log(resultados)
+               // console.log(resultados)
                 const resultados_parseado = []
                 //Recorro cada uno de los documentos
                 resultados.forEach((documento) => {
@@ -57,9 +57,9 @@ const ItemListContainer = ({ greeting }) => {
         } else {
             //Este es mi query
             const query = collection.get()
-            console.log(query)
+           // console.log(query)
             query.then((resultados) => {
-                console.log(resultados)
+                //console.log(resultados)
                 const resultados_parseado = []
                 //Recorro cada uno de los documentos
                 resultados.forEach((documento) => {

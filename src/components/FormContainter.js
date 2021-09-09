@@ -1,13 +1,14 @@
-
 import { useState } from 'react'
 import { baseDatosFB, getTimestamp } from './firebase/index'
-import Form from './Formulario'
+import Formulario from './Formulario'
 
-const OrderContainer = ({ cart }) => {
+const FormContainer = ({ cart }) => {
+    console.log(cart);
     const [LastOrder, setLastOrder] = useState()
     const [isLoading, setIsLoading] = useState(false)
 
     const onSubmit = (e, buyer) => {
+        console.log(buyer);
         e.preventDefault()
         setIsLoading(true)
 
@@ -15,10 +16,12 @@ const OrderContainer = ({ cart }) => {
             buyer: buyer,
             items: cart,
             date: getTimestamp(),
-            total: cart.map((item) => item.price).reduce((prev, curr) => prev + curr)
+            total:  cart.map((item) => item.price).reduce((prev, curr) => prev + curr)
         }
-         console.log(newOrder);
-        baseDatosFB().collection('detallesComprador').add(newOrder).then(({ id }) => {
+
+     const Collection = baseDatosFB.collection('orders');
+     //console.log(Collection);
+        Collection.add(newOrder).then(({ id }) => {
             setLastOrder(id)
         }).finally(() => {
             setIsLoading(false)
@@ -26,8 +29,10 @@ const OrderContainer = ({ cart }) => {
     }
 
     return (
-        <Form onSubmit={onSubmit} LastOrder={LastOrder} isLoading={isLoading} />
+        <div>
+        <Formulario onSubmit={onSubmit} LastOrder={LastOrder} isLoading={isLoading} />
+        </div>
     )
 }
 
-export default OrderContainer
+export default FormContainer;

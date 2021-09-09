@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     const [estado, setEstado] = useState("pendiente");
     /* parametro que recibe al renderizar el contenido */
     const params = useParams()
-    console.log(params)
+   
     //console.log(params.id)
 
     useEffect(() => {
@@ -22,16 +22,16 @@ const ItemDetailContainer = () => {
 
         if (params.id) {
             const filtro = collection.doc(params.id)
-            console.log(filtro)
+           // console.log(filtro)
             const query = filtro.get()
-            console.log(query)
+            //console.log(query)
             query.then((resultados) => {
                 //console.log(resultados)
 
                 //el id esta separado del resto de la data
                 const id = resultados.id
                 const data = resultados.data()
-                console.log(data)
+                //console.log(data)
                 const data_final = { id, ...data }
                 setProducto(data_final)
             }).catch((error) => {

@@ -1,26 +1,22 @@
 import CartContext from "../context/CartContext";
-import { useContext } from "react";
+import { useContext} from "react";
 import { Link } from "react-router-dom";
 import ItemCart from "./ItemCart";
 import { BsTrashFill } from "react-icons/bs";
 import  { Button }  from  'react-bootstrap' ;
 import Container from "react-bootstrap/Container"
-import FormContainer from "./FormContainer";
 import { LinkContainer } from 'react-router-bootstrap'
 import Footer from "./Footer"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
+import FormContainer from "./FormContainter";
 import '../css/Cart.css';
 
 const Carrito = () => {
-     const context = CartContext;
-
   
     const {carrito, borrarDelCarrito, vaciarCarrito, precioTotal} = useContext(CartContext);
 
   
-
-
     return (
         <>
        
@@ -30,10 +26,13 @@ const Carrito = () => {
            
             <Container>
            <Row>
+           {carrito.length === 0 ?
+           <article><div className="sinStock">No hay productos en tu carrito. Te invitamos a que visites nuestra <Link to={`/`}><span className="sin_items">HOME</span></Link></div></article>: null
+             }
            <Col>
-            { carrito.length > 0 ? carrito.map( (item) => <div className="carro"> <ItemCart key={item.id} item={item} borrarDelCarrito={borrarDelCarrito} /></div>) : <article><div className="sinStock">No hay productos en tu carrito. Te invitamos a que visites nuestra <Link to={`/`}><span className="sin_items">HOME</span></Link></div></article>}
+            { carrito.length > 0 ? carrito.map( (item) => <div className="carro"> <ItemCart key={item.id} item={item} borrarDelCarrito={borrarDelCarrito} /></div>) : null }
             { carrito.length > 0 ?
-            <FormContainer cart={context.items} /> : null
+             <FormContainer   cart={carrito} /> : null
              }
             </Col>
             <Col>
@@ -54,8 +53,7 @@ const Carrito = () => {
             <div className="total">
 
                     <p>Total: $<span> {precioTotal}</span></p>
-          
-          
+
             </div>
             : null
             }
@@ -71,9 +69,6 @@ const Carrito = () => {
                 <Button variant="secondary mt-3 mb-4" id="botonCheckout"  href="">SEGUIR COMPRANDO</Button>
                 </LinkContainer>
                 </div>
-             
-             
-           
                 </div>
                  : null
                 }
